@@ -10,21 +10,21 @@
 # This function should return the sum of 'num1' and 'num2'.
 def addition(num1, num2):
     sum = num1 + num2
-    pass sum
+    return; sum
 
 
 # Section 2: Define a function called 'subtraction' that takes two parameters: 'num1' and 'num2'.
 # This function should return the result of subtracting 'num2' from 'num1'.
 def subtraction(num1, num2):
     difference = num1 - num2
-    pass difference
+    return; difference
 
 
 # Section 3: Define a function called 'multiplication' that takes two parameters: 'num1' and 'num2'.
 # This function should return the product of 'num1' and 'num2'.
 def multiplication(num1, num2):
     product = num1 * num2
-    pass product
+    return; product
 
 
 # Section 4: Define a function called 'division' that takes two parameters: 'num1' (dividend) and 'num2' (divisor).
@@ -32,7 +32,7 @@ def multiplication(num1, num2):
 # Handle the case where 'num2' is zero and return "Error: Division by zero" in this case.
 def division(num1, num2):
     quotient = num1 / num2
-    pass quotient
+    return; quotient
 
 
 # Section 5: Define a function called 'main' which will be the entry point of your program.
