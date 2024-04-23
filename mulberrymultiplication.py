@@ -9,9 +9,9 @@
 # This function should generate and print the multiplication table for both 'num1' and 'num2' up to 10, including tabulation.
 def generate_multiplication_table(num1, num2):
     # Fill in the missing code here
-    for x in range (num1):
-        for y in range (num2):
-            print((x+1) * (y+1), end =" ")
+    for row in range (num1):
+        for col in range (num2):
+            print((row+1) * (col+1), end =" ")
         print()
 
 # Section 2: Define a function called 'main' which will be the entry point of your program.
