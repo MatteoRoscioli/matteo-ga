@@ -1,11 +1,14 @@
 player_health = 100
 player_shield = 100
-
+print("Game: Mage Manor\n" +
+      "Version: 0.0.1\n" +
+      "Developed by QWERTY Labs")
+print("                                                                              ")
 while True:
     print("Health: " + str(player_health), ", Shield: " + str(player_shield))
 
-    print("You are Cobblestone Village. You see before you three paths. Which path do you take?\n" +
-          "1) The dark, dusty cave\n" +
+    print("You are at Cobblestone Village. You see before you three paths. Which path do you take?\n" +
+          "1) The deep, dark cave\n" +
           "2) The forbidden desert (DANGER AHEAD)\n" +
           "3) The enchanted forest\n")
 
@@ -13,11 +16,13 @@ while True:
 
     if choice1 == "1":
         print("Health: " + str(player_health), ", Shield: " + str(player_shield))
-        print("You have entered the dark, dusty cave...\n Before you, you see " +
+        print("You have entered the deep, dark cave...\n Before you, you see " +
               "1) A large cave tunnel with mysterious things inside...\n" +
               "2) Stay on same path\n" +
               "3) Contact Village and ask to leave\n")
+        
         choice2 = input()
+
         if choice2 == "3":
             print("")
         elif choice2 == "2":
@@ -28,12 +33,19 @@ while True:
                   "1) Cast lightning bolt\n" +
                   "2) Cast fireball\n" +
                   "3) Heal\n")
+            
             choice4 = input()
-            if choice4 == "1":
-                print("You cast the fireball... all the monsters catch fire and burn away!! Well done!!")
+
+            if choice4 == "2":
+                print("You cast a fireball... all the monsters catch fire and burn away!! Well done!!")
+            elif choice4 == "1":
+                print("You cast a lightning bolt... but the shot ricochetes off the cave wall and hits you. You die. The end...")
+            elif choice4 =="3":
+                player_shield += 30
+
     if choice1 == "3":
         print("Health: " + str(player_health), ", Shield: " + str(player_shield))
-        print("You have entered the enchanted forest...\n Before you, you see " +
+        print("You have entered the forbidden desert, \n Before you, you see " +
               "1) An evil graveyard, with a Frog waiting to be saved from the Mosquitos\n" +
               "2) Stay on same path\n" +
               "3) Contact Village and ask to leave\n")
