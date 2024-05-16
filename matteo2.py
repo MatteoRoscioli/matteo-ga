@@ -40,7 +40,7 @@ def division(num1, num2):
 # Then call the appropriate function based on the user's choice and print the result.
 def main():
     # Prompt the user to enter two numbers and an arithmetic operation choice
-5    num1 = float(input("Enter the first number: "))
+    num1 = float(input("Enter the first number: "))
     num2 = float(input("Enter the second number: "))
     operation = input(
         "Enter the operation (addition/subtraction/multiplication/division): "
