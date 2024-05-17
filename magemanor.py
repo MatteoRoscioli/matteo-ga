@@ -34,25 +34,27 @@ while True:
                   "2) Cast fireball\n" +
                   "3) Heal\n")
             
-            choice4 = input()
+            choice3 = input()
 
-            if choice4 == "2":
+            if choice3 == "2":
                 print("You cast a fireball... all the monsters catch fire and burn away!! Well done!!")
-            elif choice4 == "1":
+            elif choice3 == "1":
                 print("You cast a lightning bolt... but the shot ricochetes off the cave wall and hits you. You die. The end...")
-            elif choice4 =="3":
+            elif choice3 =="3":
                 player_shield += 30
 
-    if choice1 == "3":
+    if choice1 == "2":
         print("Health: " + str(player_health), ", Shield: " + str(player_shield))
-        print("You have entered the forbidden desert, \n Before you, you see " +
-              "1) An evil graveyard, with a Frog waiting to be saved from the Mosquitos\n" +
-              "2) Stay on same path\n" +
+        print("You have entered the forbidden desert. \n Before you, you see " +
+              "1) A road, cutting straight through the desert\n" +
+              "2) A perilous cliff road\n" +
               "3) Contact Village and ask to leave\n")
-        choice2 = input()
-        if choice2 == "3":
+        choice4 = input()
+        if choice4 == "3":
             print("")
-        elif choice2 == "1":
+        elif choice4 == "2":
+            print("You start walking on the ciff road. You fal of the cliff and die.")    
+        elif choice4 == "1":
             print("Health: " + str(player_health), ", Shield: " + str(player_shield))
     if choice1 == "3":
         print("Health: " + str(player_health), ", Shield: " + str(player_shield))
