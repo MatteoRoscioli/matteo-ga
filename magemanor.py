@@ -44,8 +44,9 @@ while True:
                 print("You cast a lightning bolt... but the shot ricochetes off the cave wall and hits you. You die. The end...")
             elif choice3 =="3":
                 player_shield += 30
-                print("Health: " + str(player_health), ", Shield: " + str(player_shield))
-                break
+                
+            print("Health: " + str(player_health), ", Shield: " + str(player_shield))
+            break
 
     print("THE CREEPER IS HERE!!!! WHAT DO YOU DO?\n" +
       "1) FIGHT!")
@@ -103,7 +104,7 @@ while True:
                     player_health += 30
                     print("You healed! +30 Health!")
                     break
-                
+
         if choice1 == "2":
             print("Health: " + str(player_health), ", Shield: " + str(player_shield))
         print("You have entered the forbidden desert. \n Before you, you see " +
