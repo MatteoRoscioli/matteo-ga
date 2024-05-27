@@ -19,13 +19,13 @@ for (row, col), piece in initial_positions.items():
     board[row][col] = '[{}]'.format(piece)
 
 # Define column labels
-column_labels = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+column_labels = ["a b  c  d  e  f  g  h"]
 
 # Function to print the board with coordinates
 def print_board():
     print("   " + "  ".join(column_labels))
     for i, row in enumerate(board, start=1):
-        print(str(i) + " " + " ".join(row))
+        print(str(i) + "" + "".join(row))
 
 # Function to move a piece on the board
 def move_piece(from_row, from_col, to_row, to_col):
