@@ -184,12 +184,15 @@ print("Moving on, you start walking along the path. It starts raining, but there
 print("The world starts swirling around you... You hear wailing... An almighty lightning bolt crashes down...")
 print("YOU HAVE ENCOUNTERED THE FEARED POLTERGEIST!!")
 
-polty_health = 150
+polty_health = 130
 while polty_health > 0:
     print_player_health()
     print("Poltergeist Health: " + str(polty_health))
     print_moves()
     choice = input("Enter your choice: ")
+    if choice == '4':
+        print("You use Hydroball on the Poltergeist!")
+        polty_health = polty_health - 35
     if choice == '1':
         print("You use Staff Bonk on the Poltergeist!")
         polty_health = polty_health - 10
