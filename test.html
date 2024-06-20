@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Custom Search API Example</title>
+<style>
+  /* Basic styling for the search bar */
+  .search-container {
+    position: relative;
+    margin: 20px auto;
+    width: 500px;
+  }
+  .search-container input[type="text"] {
+    width: calc(100% - 80px); /* Adjust width to leave space for button */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+  }
+  .search-container button {
+    width: 80px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #4285F4; /* Google blue */
+    color: #fff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    outline: none;
+  }
+  .search-container button:hover {
+    background-color: #357AE8; /* Darker shade of Google blue */
+  }
+  /* Styling for search results */
+  .search-results {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    width: 500px;
+  }
+  .search-results li {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+</style>
+</head>
+<body>
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search using Google...">
+    <button onclick="searchGoogle()">Search</button>
+    <img src="car3.jpg" alt="citroen">
+  </div>
+  
+  <ul class="search-results" id="searchResults">
+    <!-- Results will be dynamically added here -->
+  </ul>
+
+  <script>
+    function searchGoogle() {
+      var query = document.getElementById('searchInput').value.trim();
+
+      // Replace 'YOUR_API_KEY' and 'YOUR_SEARCH_ENGINE_ID' with actual values
+      var apiKey = 'YOUR_API_KEY';
+      var searchEngineId = 'YOUR_SEARCH_ENGINE_ID';
+      var url = `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${searchEngineId}&q=${encodeURIComponent(query)}`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          displaySearchResults(data.items);
+        })
+        .catch(error => {
+          console.error('Error fetching search results:', error);
+        });
+    }
+
+    function displaySearchResults(items) {
+      var searchResults = document.getElementById('searchResults');
+      searchResults.innerHTML = '';
+
+      items.forEach(function(item) {
+        var li = document.createElement('li');
+        li.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a><br>${item.snippet}`;
+        searchResults.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>
