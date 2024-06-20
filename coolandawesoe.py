@@ -141,22 +141,22 @@ player_spells_unlocked.append("Vine Whip")
 print("You walk down the road.. towards the beach... you see a mysterious figure in the distance...")
 print("YOU HAVE ENCOUNTERED THE DREADED PIRATE PI-CLOPS!!")
 
-polty_health = 110
+piclops_health = 110
 
-while polty_health > 0:
+while piclops_health > 0:
     print_player_health()
-    print("Pirate Pi-Clops Health: " + str(polty_health))
+    print("Pirate Pi-Clops Health: " + str(piclops_health))
     print_moves()
     choice = input("Enter your choice: ")
     if choice == '1':
         print("You use Staff Bonk on Pirate Pi-Clops!")
-        polty_health = polty_health - 10
+        piclops_health = piclops_health - 10
     if choice == '3':
         if current_player_mana < 15:
             print("You don't have enough mana!")
             continue
         print("You use Vine Whip on Pirate Pi-Clops!")
-        polty_health = polty_health - 30
+        piclops_health = piclops_health - 30
         vine_whip += 1
         current_player_mana -= 15
     if choice == '2':
