@@ -188,7 +188,7 @@ polty_health = 150
 
 while polty_health > 0:
     print_player_health()
-    print("Pirate Poltergeist Health: " + str(polty_health))
+    print("Poltergeist Health: " + str(polty_health))
     print_moves()
     choice = input("Enter your choice: ")
     if choice == '1':
