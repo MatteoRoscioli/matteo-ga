@@ -179,13 +179,12 @@ print("You've unlocked the ability: Hydroball!")
 
 player_spells_unlocked.append("Hydroball")
 
-print("Moving on, you start walking along the path. It starts raining, but there is a mansion in the distance. You take shelter there. But all of a sudden, strange things start happening....")
 
+print("Moving on, you start walking along the path. It starts raining, but there is a mansion in the distance. You take shelter there. But all of a sudden, strange things start happening....")
 print("The world starts swirling around you... You hear wailing... An almighty lightning bolt crashes down...")
 print("YOU HAVE ENCOUNTERED THE FEARED POLTERGEIST!!")
 
 polty_health = 150
-
 while polty_health > 0:
     print_player_health()
     print("Poltergeist Health: " + str(polty_health))
@@ -211,7 +210,7 @@ while polty_health > 0:
         print("The Poltergeist is stunned by the Vine Whip!")
         vine_whip -= 1
     else:
-        piclops_attack()
+        polty_attack()
     damage_player_tick()
     check_player_death()
 print("You defeated the Poltergeist! He drops something. You pick it up and you recover ALL of your health!!!")
