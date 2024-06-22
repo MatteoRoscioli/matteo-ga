@@ -1,8 +1,8 @@
 # 100 Health
 # 100 Mana
 # 30 Shield
-#
-#
+
+
 # Spells:
 #     Staff Bonk | 10 damage to one enemy | 0 mana
 #     Lightning bolt | 20 damage to one enemy | 20 damage to all enemies if coated in water | 15 mana
@@ -10,6 +10,17 @@
 #     Shield spell | Gives you 30 shield | 18 mana
 #     Fireball | 100 damage to one enemy, 50 damage to player | 30 mana
 #     Hydroball | 50 damage to one enemy | Coats area in water | 20 mana
+
+# Enemies: 
+#      Snapper
+#      Pi-clops
+#      Poltergeist
+
+
+# Boss mob:
+#      The Worm
+
+
 import random
 
 current_player_health = 100
@@ -91,7 +102,7 @@ def polty_attack():
         current_player_health -= 40
     else:
         print("The Poltergeist uses a spell on you so strong it kills you! The end.....")
-        current_player_health -= 90
+        current_player_health -= 100
 
 
 def damage_player_tick():
@@ -178,6 +189,83 @@ print("Congratulations. You have found a mysterious ball of sand... you crack it
 print("You've unlocked the ability: Hydroball!")
 
 player_spells_unlocked.append("Hydroball")
+
+
+print("Moving on, you start walking along the path. It starts raining, but there is a mansion in the distance. You take shelter there. But all of a sudden, strange things start happening....")
+print("The world starts swirling around you... You hear wailing... An almighty lightning bolt crashes down...")
+print("YOU HAVE ENCOUNTERED THE FEARED POLTERGEIST!!")
+
+polty_health = 130
+while polty_health > 0:
+    print_player_health()
+    print("Poltergeist Health: " + str(polty_health))
+    print_moves()
+    choice = input("Enter your choice: ")
+    if choice == '4':
+        print("You use Hydroball on the Poltergeist!")
+        polty_health = polty_health - 35
+    if choice == '1':
+        print("You use Staff Bonk on the Poltergeist!")
+        polty_health = polty_health - 10
+    if choice == '3':
+        if current_player_mana < 15:
+            print("You don't have enough mana!")
+            continue
+        print("You use Vine Whip on Poltergeist!")
+        polty_health = polty_health - 30
+        vine_whip += 1
+        current_player_mana -= 15
+    if choice == '2':
+        print(
+            "You fled... you've been crowned as the village coward. Mom is VERY disappointed in you. Here is a letter from her:")
+        moms_letter()
+        exit()
+    if vine_whip >= 1:
+        print("The Poltergeist is stunned by the Vine Whip!")
+        vine_whip -= 1
+    else:
+        polty_attack()
+    damage_player_tick()
+    check_player_death()
+print("You defeated the Poltergeist! He drops something. You pick it up and you recover ALL of your health!!!")
+current_player_health += 100
+print("Congratulations. You have uncovered a strange artifact... you accidently drop it. It breaks and you get a new spell! New ability unlocked!")
+print("You've unlocked the ability: Psychic!")
+
+player_spells_unlocked.append("Psychic")
+print("What happens next? The answer, as the journey continues!!!")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 print("Moving on, you start walking along the path. It starts raining, but there is a mansion in the distance. You take shelter there. But all of a sudden, strange things start happening....")
