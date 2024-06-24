@@ -78,7 +78,6 @@ def snapper_attack():
 
 def piclops_attack():
     global current_player_health
-    global player_being_eaten
     attack_num = random.randint(1, 100)
     if attack_num <= 70:
         print("The dreaded pi-clops pokes at you with his dagger!")
@@ -92,7 +91,6 @@ def piclops_attack():
 
 def polty_attack():
     global current_player_health
-    global player_being_eaten
     attack_num = random.randint(1, 100)
     if attack_num <= 70:
         print("The Poltergeist lifts you in the air and throws you on the ground! Critical hit!")
@@ -104,6 +102,18 @@ def polty_attack():
         print("The Poltergeist uses a spell on you so strong it kills you! The end.....")
         current_player_health -= 100
 
+def kong_attack():
+    global current_player_health
+    attack_num = random.randint(1, 100)
+    if attack_num <= 70:
+        print("Donkey Kong throws a barrel at you and it knocks you over! Ouch!")
+        current_player_health -= 15
+    elif attack_num <= 90:
+        print("Donkey Kong throws a heavy shipping container at you and it crushes you! Direct hit!")
+        current_player_health -= 40
+    else:
+        print("Donkey Kong throws a FLAMING barrel at you!! You catch on fire! By the time you extiguish it, your health is greatly diminished!")
+        current_player_health -= 50
 
 def damage_player_tick():
     global current_player_health
@@ -268,28 +278,31 @@ print("What happens next? The answer, as the journey continues!!!")
 
 
 
-print("Moving on, you start walking along the path. It starts raining, but there is a mansion in the distance. You take shelter there. But all of a sudden, strange things start happening....")
-print("The world starts swirling around you... You hear wailing... An almighty lightning bolt crashes down...")
-print("YOU HAVE ENCOUNTERED THE FEARED POLTERGEIST!!")
+print("Going forward, you end up at an industrial seaport. Large barrels and boxes full of cargo surround you. But something feels off...")
+print("Everything seems pixelated! Then you realize it... you're TRAPPED in a video game!!")
+print("YOU HAVE ENCOUNTERED DONKEY KONG!!!!")
 
-polty_health = 130
-while polty_health > 0:
+kong_health = 130
+while kong_health > 0:
     print_player_health()
-    print("Poltergeist Health: " + str(polty_health))
+    print("Poltergeist Health: " + str(kong_health))
     print_moves()
     choice = input("Enter your choice: ")
+    if choice == '5':
+        print("You use Psychic on Donkey Kong!")
+        polty_health = polty_health - 35
     if choice == '4':
         print("You use Hydroball on the Poltergeist!")
-        polty_health = polty_health - 35
+        kong_health = kong_health - 35
     if choice == '1':
         print("You use Staff Bonk on the Poltergeist!")
-        polty_health = polty_health - 10
+        kong_health = kong_health - 10
     if choice == '3':
         if current_player_mana < 15:
             print("You don't have enough mana!")
             continue
         print("You use Vine Whip on Poltergeist!")
-        polty_health = polty_health - 30
+        kong_health = kong_health - 30
         vine_whip += 1
         current_player_mana -= 15
     if choice == '2':
