@@ -243,38 +243,6 @@ print("Congratulations. You have uncovered a strange artifact... you accidently 
 print("You've unlocked the ability: Psychic!")
 
 player_spells_unlocked.append("Psychic")
-print("What happens next? The answer, as the journey continues!!!")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -290,7 +258,7 @@ while kong_health > 0:
     choice = input("Enter your choice: ")
     if choice == '5':
         print("You use Psychic on Donkey Kong!")
-        polty_health = polty_health - 35
+        kong_health = kong_health - 35
     if choice == '4':
         print("You use Hydroball on the Poltergeist!")
         kong_health = kong_health - 35
@@ -314,7 +282,7 @@ while kong_health > 0:
         print("The Poltergeist is stunned by the Vine Whip!")
         vine_whip -= 1
     else:
-        polty_attack()
+        kong_attack()
     damage_player_tick()
     check_player_death()
 print("You defeated the Poltergeist! He drops something. You pick it up and you recover ALL of your health!!!")
