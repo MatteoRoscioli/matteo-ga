@@ -285,7 +285,7 @@ while kong_health > 0:
         kong_attack()
     damage_player_tick()
     check_player_death()
-print("Congratulations! You defeated onkey Kong! As he falls, he drops a Nintendo NES. You open the cartridge holder and a glowing orb infuses itself with your staff! New ability unlocked!")
+print("Congratulations! You defeated Donkey Kong! As he falls, he drops a Nintendo NES. You open the cartridge holder and a glowing orb infuses itself with your staff! New ability unlocked!")
 print("You've unlocked the ability: Bit Blast!")
 
 player_spells_unlocked.append("Bit Blast")
