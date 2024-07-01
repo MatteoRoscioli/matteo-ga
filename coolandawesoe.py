@@ -289,4 +289,48 @@ print("Congratulations! You defeated Donkey Kong! As he falls, he drops a Ninten
 print("You've unlocked the ability: Bit Blast!")
 
 player_spells_unlocked.append("Bit Blast")
+
+print("As you reach the end of the road, you come to a desert. Large sand dunes are EVERYWHERE!")
+print("But all of a sudden, the sand around you starts rumbling!")
+print("YOU HAVE ENCOUNTERED DONKEY KONG!!!!")
+
+kong_health = 130
+while kong_health > 0:
+    print_player_health()
+    print("Donkey Kong Health: " + str(kong_health))
+    print_moves()
+    choice = input("Enter your choice: ")
+    if choice == '5':
+        print("You use Psychic on Donkey Kong!")
+        kong_health = kong_health - 35
+    if choice == '4':
+        print("You use Hydroball on Donkey Kong!")
+        kong_health = kong_health - 35
+    if choice == '1':
+        print("You use Staff Bonk on Donkey Kong!")
+        kong_health = kong_health - 10
+    if choice == '3':
+        if current_player_mana < 15:
+            print("You don't have enough mana!")
+            continue
+        print("You use Vine Whip on Donkey Kong!")
+        kong_health = kong_health - 30
+        vine_whip += 1
+        current_player_mana -= 15
+    if choice == '2':
+        print(
+            "You fled... you've been crowned as the village coward. Mom is VERY disappointed in you. Here is a letter from her:")
+        moms_letter()
+        exit()
+    if vine_whip >= 1:
+        print("Donkey Kong is stunned by the Vine Whip!")
+        vine_whip -= 1
+    else:
+        kong_attack()
+    damage_player_tick()
+    check_player_death()
+print("Congratulations! You defeated Donkey Kong! As he falls, he drops a Nintendo NES. You open the cartridge holder and a glowing orb infuses itself with your staff! New ability unlocked!")
+print("You've unlocked the ability: Bit Blast!")
+
+player_spells_unlocked.append("Bit Blast")
 print("What happens next? The answer, as the journey continues!!!")
